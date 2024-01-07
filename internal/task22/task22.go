@@ -9,7 +9,6 @@ import (
 func Task22() {
 	var a, b big.Int
 
-	// Ввод значений с клавиатуры
 	fmt.Print("Введите значение a: ")
 	_, err := fmt.Scan(&a)
 	if err != nil {
