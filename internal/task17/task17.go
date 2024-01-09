@@ -2,18 +2,26 @@ package task17
 
 import "fmt"
 
+// Функция Task17 демонстрирует использование алгоритма бинарного поиска.
 func Task17() {
+	// Отсортированный массив
 	arr := []int{1, 3, 5, 7, 9, 11, 13, 15}
+	// Целевой элемент для поиска
 	target := 7
+
+	// Вызов функции бинарного поиска
 	result := binarySearch(arr, target)
 
+	// Вывод результата поиска
 	if result == -1 {
-		fmt.Println("target не найден")
+		fmt.Println("Целевой элемент не найден")
 	} else {
-		fmt.Printf("target найден: index=%d\n", result)
+		fmt.Printf("Целевой элемент найден: индекс=%d\n", result)
 	}
 }
 
+// Функция binarySearch выполняет бинарный поиск в отсортированном массиве и возвращает индекс найденного элемента.
+// Если элемент не найден, возвращается -1.
 func binarySearch(arr []int, target int) int {
 	// Нижняя и верхняя границы
 	low, high := 0, len(arr)-1
@@ -21,6 +29,7 @@ func binarySearch(arr []int, target int) int {
 	for low <= high { // Продолжать поиск до тех пор, пока low <= high
 		// Рассчитать средний индекс
 		mid := low + (high-low)/2
+
 		// Проверка, найден ли элемент
 		if arr[mid] == target {
 			return mid
@@ -35,6 +44,6 @@ func binarySearch(arr []int, target int) int {
 		}
 	}
 
-	// Если элемент не найден, return -1
+	// Если элемент не найден, возвращается -1
 	return -1
 }

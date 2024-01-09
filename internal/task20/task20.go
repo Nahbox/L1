@@ -5,15 +5,19 @@ import (
 	"strings"
 )
 
+// Функция Task20 демонстрирует переворачивание слов в строке.
 func Task20() {
+	// Исходная строка
 	input := "snow dog sun"
+	// Перевернутая строка с перевернутыми словами
 	reversed := reverseWords(input)
 	fmt.Println(reversed)
 }
 
-// reverseWords переворачивает слова в строке
+// Функция reverseWords переворачивает слова в строке.
 func reverseWords(input string) string {
-	words := strings.Fields(input) // Разбиваем строку на слова
+	// Разбиваем строку на слова
+	words := strings.Fields(input)
 	reversedWords := make([]string, len(words))
 
 	// Переворачиваем каждое слово

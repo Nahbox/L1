@@ -2,7 +2,7 @@ package task21
 
 import "fmt"
 
-// OldPrinter - структура, которая печатает данные в старом формате
+// OldPrinter: структура, которая печатает данные в старом формате
 type OldPrinter struct {
 	message string
 }

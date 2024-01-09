@@ -2,7 +2,7 @@ package task21
 
 import "fmt"
 
-// OldToNewAdapter - адаптер, который преобразует OldPrinter к NewPrinter
+// OldToNewAdapter: адаптер, который преобразует OldPrinter к NewPrinter
 type OldToNewAdapter struct {
 	oldPrinter *OldPrinter
 }
