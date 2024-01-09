@@ -5,6 +5,7 @@ import (
 	"time"
 )
 
+// Точка входа в Task25
 func Task25() {
 	fmt.Println("Start")
 	sleep(2000 * time.Millisecond) // Приостановка выполнения на 2 секунды (2000 миллисекунд)

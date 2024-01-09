@@ -2,6 +2,7 @@ package task26
 
 import "fmt"
 
+// Решение с использованием map для отслеживания использованных символов
 func Task26_1() {
 	fmt.Println("abcd", areAllCharactersUnique("abcd"))     // true
 	fmt.Println("QwErTy", areAllCharactersUnique("QwErTy")) // true
@@ -11,7 +12,6 @@ func Task26_1() {
 	fmt.Println("GoLang", areAllCharactersUnique("GoLang")) // false
 }
 
-// Решение с использованием map для отслеживания использованных символов
 func areAllCharactersUnique(input string) bool {
 	charSet := make(map[rune]bool)
 

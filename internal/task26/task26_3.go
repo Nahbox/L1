@@ -7,7 +7,7 @@ import (
 	"github.com/emirpasic/gods/sets/hashset"
 )
 
-// Решение с использованием структуры Set сторонней библиотеки
+// Использование структуры Set сторонней библиотеки
 func Task26_3() {
 	fmt.Println("abcd", areAllCharactersUniqueSet("abcd"))     // true
 	fmt.Println("QwErTy", areAllCharactersUniqueSet("QwErTy")) // true

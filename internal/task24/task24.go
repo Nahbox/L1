@@ -29,10 +29,12 @@ func Task24() {
 	fmt.Printf("Расстояние между точками: %.2f\n", distance)
 }
 
+// Point представляет точку в двумерном пространстве с координатами x и y.
 type Point struct {
 	x, y float64
 }
 
+// NewPoint создает новый экземпляр точки.
 func NewPoint(x, y float64) *Point {
 	return &Point{
 		x,
@@ -40,6 +42,7 @@ func NewPoint(x, y float64) *Point {
 	}
 }
 
+// Distance вычисляет расстояние между текущей точкой и другой точкой.
 func (p *Point) Distance(other *Point) float64 {
 	dx := p.x - other.x
 	dy := p.y - other.y

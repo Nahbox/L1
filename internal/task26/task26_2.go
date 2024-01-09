@@ -6,7 +6,7 @@ import (
 	"strings"
 )
 
-// Решение: сортируем входную строку и попарно проверяем все символы на идентичность
+// Сортируем входную строку и попарно проверяем все символы на идентичность
 func Task26_2() {
 	fmt.Println("abcd", areAllCharactersUniqueSorted("abcd"))     // true
 	fmt.Println("QwErTy", areAllCharactersUniqueSorted("QwErTy")) // true
