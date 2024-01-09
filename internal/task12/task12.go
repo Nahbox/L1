@@ -20,7 +20,7 @@ func Task12() {
 	fmt.Println(set.GetKeys())
 
 	// Вывод содержимого множества.
-	fmt.Println(set)
+	fmt.Println(set.data)
 }
 
 // Тип Set представляет собой простую реализацию множества.
@@ -62,7 +62,7 @@ func (s *Set) GetKeys() []any {
 	keys := make([]any, 0, len(s.data))
 
 	for k, v := range s.data {
-		if v > 0 {
+		for i := 0; i < v; i++ {
 			keys = append(keys, k)
 		}
 	}

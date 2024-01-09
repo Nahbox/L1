@@ -8,7 +8,7 @@ import (
 // Функция Task22 реализует операции умножения, деления, сложения и вычитания с использованием пакета math/big.
 func Task22() {
 	// Инициализация переменных типа big.Int
-	var a, b big.Float
+	var a, b big.Int
 
 	// Ввод значения переменной a
 	fmt.Print("Введите значение a: ")
@@ -27,22 +27,22 @@ func Task22() {
 	}
 
 	// Умножение
-	multiplicationResult := new(big.Float).Mul(&a, &b)
+	multiplicationResult := new(big.Int).Mul(&a, &b)
 	fmt.Printf("%s * %s = %s\n", &a, &b, multiplicationResult)
 
 	// Деление
 	if b.Sign() != 0 {
-		divisionResult := new(big.Float).Quo(&a, &b)
+		divisionResult := new(big.Int).Quo(&a, &b)
 		fmt.Printf("%s / %s = %s\n", &a, &b, divisionResult)
 	} else {
 		fmt.Println("Нельзя делить на ноль")
 	}
 
 	// Сложение
-	additionResult := new(big.Float).Add(&a, &b)
+	additionResult := new(big.Int).Add(&a, &b)
 	fmt.Printf("%s + %s = %s\n", &a, &b, additionResult)
 
 	// Вычитание
-	subtractionResult := new(big.Float).Sub(&a, &b)
+	subtractionResult := new(big.Int).Sub(&a, &b)
 	fmt.Printf("%s - %s = %s\n", &a, &b, subtractionResult)
 }

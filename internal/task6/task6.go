@@ -24,6 +24,7 @@ func Task6() {
 	// Ожидание 5 секунд и отправка сигнала отмены в канал.
 	time.Sleep(5 * time.Second)
 	fmt.Println("Завершение горутины при помощи канала отмены")
+	fmt.Println()
 	cancelCh <- struct{}{}
 
 	// Контекст с функцией отмены (WithCancel).
@@ -39,6 +40,7 @@ func Task6() {
 	// Ожидание 5 секунд и вызов функции отмены контекста.
 	time.Sleep(5 * time.Second)
 	fmt.Println("Завершение горутины с использованием контекста (WithCancel)")
+	fmt.Println()
 	cancel()
 
 	// Контекст с таймаутом (WithTimeout).
@@ -55,6 +57,7 @@ func Task6() {
 	wg.Wait()
 
 	fmt.Println("Завершение горутины с использованием контекста (WithTimeout)")
+	fmt.Println()
 }
 
 // Функция forCancelCh ожидает сигнала отмены через канал отмены.
