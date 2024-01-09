@@ -12,7 +12,7 @@ type SafeMap struct {
 	data map[string]int
 }
 
-// NewSafeMap создает новый экземпляр SafeMap.
+// NewSafeMap конструктор экземпляра SafeMap.
 func NewSafeMap() *SafeMap {
 	return &SafeMap{
 		data: make(map[string]int),
@@ -33,11 +33,11 @@ func (sm *SafeMap) Get(key string) int {
 	return sm.data[key]
 }
 
+// Функция Task7 иллюстрирует использование безопасного для конкурентного доступа map (SafeMap).
 func Task7() {
 	// Создаем новый экземпляр SafeMap.
 	safeMap := NewSafeMap()
 
-	// Используем WaitGroup для ожидания завершения всех горутин.
 	var wg sync.WaitGroup
 
 	// Запускаем несколько горутин для конкурентной записи данных в map.

@@ -2,6 +2,7 @@ package task14
 
 import "fmt"
 
+// Функция Task14 демонстрирует использование интерфейса для определения типа переменной.
 func Task14() {
 	var integer int
 	var str string
@@ -10,6 +11,7 @@ func Task14() {
 	var chString chan string
 	var chBool chan bool
 
+	// Вызов функции для определения типов переменных.
 	calculateType(chBool)   // chan bool
 	calculateType(str)      // string
 	calculateType(boolean)  // bool
@@ -18,6 +20,7 @@ func Task14() {
 	calculateType(integer)  // int
 }
 
+// Функция calculateType определяет тип переменной и выводит соответствующее сообщение.
 func calculateType(val interface{}) {
 	switch val.(type) {
 	case int:
