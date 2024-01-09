@@ -14,6 +14,8 @@ import (
 func Task4() {
 	// Переменная для хранения количества воркеров.
 	var workersCount int
+	fmt.Print("Укажите количество воркеров: ")
+	fmt.Scan(&workersCount)
 
 	var wg sync.WaitGroup
 	// Канал для передачи данных между воркерами и писателем.
@@ -23,16 +25,10 @@ func Task4() {
 	ctx, cancel := context.WithCancel(context.Background())
 
 	// Запуск горутины для писателя.
-	go func() {
-		defer wg.Done()
-		writer(ctx, data)
-	}()
-
-	// Запуск горутины для обработки сигнала завершения.
 	wg.Add(1)
 	go func() {
 		defer wg.Done()
-		checkCtrlC(cancel)
+		writer(ctx, data)
 	}()
 
 	// Запуск воркеров в соответствии с указанным количеством.
@@ -43,6 +39,13 @@ func Task4() {
 			worker(ctx, data, idx)
 		}(i + 1)
 	}
+
+	// Запуск горутины для обработки сигнала завершения.
+	wg.Add(1)
+	go func() {
+		defer wg.Done()
+		checkCtrlC(cancel)
+	}()
 
 	// Ожидание завершения всех горутин.
 	wg.Wait()
